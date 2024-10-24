@@ -6,7 +6,7 @@ export default function cakeReducer(state = initialCake, actions) {
     case 'BUY_CAKE': {
       return {
         ...state,
-        numOfCakes: state.numOfCakes - 1,
+        numOfCakes: state.numOfCakes - actions.payload,
       };
     }
     default:
