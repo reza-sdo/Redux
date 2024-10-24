@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { buyCake } from '../../redux/cake/cakeActions';
 
 const CakeContainer = () => {
   const [value, setValue] = useState(0);
@@ -19,8 +20,8 @@ const CakeContainer = () => {
       />
       <button
         onClick={() => {
-          dispatch({ type: 'BUY_CAKE', payload: value });
-          setValue(1)
+          dispatch(buyCake(value));
+          setValue(0);
         }}
       >
         Buy Cake
