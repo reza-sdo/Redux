@@ -1,10 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
-  return <div>App</div>;
+  return (
+    <Provider store={store}>
+      <div>App</div>
+    </Provider>
+  );
 }
 
 export default App;
 
-// store  => actions => reducer 
-// all actions must be pure 
+// store  => actions => reducer
+// all actions must be pure
