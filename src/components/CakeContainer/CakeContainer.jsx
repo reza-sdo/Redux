@@ -4,13 +4,15 @@ import { buyCake } from '../../redux/cake/cakeActions';
 
 const CakeContainer = () => {
   const [value, setValue] = useState(0);
-  const state = useSelector((state) => state.numOfCakes);
+  const state = useSelector((state) => state.cake);
+
+  console.log(state);
 
   const dispatch = useDispatch();
 
   return (
     <div>
-      <h2>cake number : {state} </h2>
+      <h2>cake number : {state.numOfCakes} </h2>
       <input
         type="number"
         value={value}
