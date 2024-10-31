@@ -11,7 +11,23 @@ const UsersList = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  return <div>UsersList</div>;
+  return (
+    <div>
+      <h2>UsersList</h2>
+      {state.loading ? (
+        <h5>loading...</h5>
+      ) : state.error ? (
+        <p>{state.error}</p>
+      ) : (
+        <div>
+          {state.data &&
+            state.data.map((user) => {
+              return <li key={user.id}>{user.name}</li>;
+            })}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default UsersList;
